@@ -1,0 +1,17 @@
+<om-toolbar (toggleMenu)="sidenav.toggle()"></om-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <a [routerLink]="['/users/new']" (click)="sidenav.toggle()">New User</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container text-center">
+      <div class="row">
+        <div
+          class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+          <router-outlet />
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
