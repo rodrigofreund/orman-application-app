@@ -24,9 +24,26 @@ export class NewUser {
   private userService = inject(UserService);
 
   form: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    surname: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.email, Validators.required]),
+    name: new FormControl(
+      '',
+      [
+        Validators.required,
+        Validators.maxLength(50),
+        Validators.minLength(2)]),
+    surname: new FormControl(
+      '',
+      [
+        Validators.required, 
+        Validators.maxLength(50),
+        Validators.minLength(2)]
+    ),
+    email: new FormControl(
+      '',
+      [
+        Validators.email,
+        Validators.required
+      ]
+    ),
     document: new FormControl('', [Validators.required]),
     street: new FormControl('', [Validators.required]),
     number: new FormControl(''),
