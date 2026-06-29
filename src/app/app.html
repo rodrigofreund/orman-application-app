@@ -2,7 +2,14 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-    <a [routerLink]="['/users/new']" (click)="sidenav.toggle()">New User</a>
+    <div>
+      <a [routerLink]="['/users/new']" (click)="sidenav.toggle()">New user</a>
+    </div>
+    <div>
+      <a [routerLink]="['/users/list']" (click)="sidenav.toggle()">List
+        users</a>
+    </div>
+
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="container text-center">
